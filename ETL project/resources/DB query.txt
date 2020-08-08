@@ -1,0 +1,43 @@
+CREATE TABLE airbnb_hosts(
+    host_id INT,
+    host_name VARCHAR(150),
+    host_since DATE,
+    host_location VARCHAR(150),
+    host_response_time VARCHAR(200),
+    host_response_rate INT,
+    host_acceptance_rate INT,
+    host_is_superhost BOOLEAN,
+    host_neighbourhood VARCHAR(100),
+    host_listings_count INT,
+    host_has_profile_pic BOOLEAN,
+    host_identity_verified BOOLEAN,
+    PRIMARY KEY(host_id)
+);
+
+CREATE TABLE listings(
+    id INT,
+    name VARCHAR(150),
+    host_id VARCHAR(150),
+    host_name VARCHAR(150),
+    neighbourhood_group VARCHAR(150),
+    neighbourhood VARCHAR(150),
+    latitude FLOAT,
+    longitude FLOAT,
+    room_type VARCHAR(150),
+    price FLOAT,
+    minimum_nights INT,
+    number_of_reviews INT,
+    last_review DATE,
+    reviews_per_month FLOAT,
+    calculated_host_listings_count INT,
+    availability_365 INT,      
+);
+
+CREATE TABLE property_availability(
+    id INT,
+    listing_id INT,
+    available_date DATE,
+    available BOOLEAN,
+    price FLOAT
+
+);
